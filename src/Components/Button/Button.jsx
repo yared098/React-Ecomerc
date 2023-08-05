@@ -5,7 +5,7 @@ function Button({ type, title, disable, onClick }) {
   return (
     <button
       className={`btn ${
-        (type === "add" && "add") ||
+        (type === "add to cart" && "add") ||
         (type === "remove" && "remove") ||
         (type === "checkout" && "checkout")
       }`}
