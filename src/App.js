@@ -3,6 +3,7 @@ import "./App.css";
 import Card from "./Components/Card/Card";
 import Cart from "./Components/Cart/Cart";
 import BottomBar1 from "./Components/BottomBar/bottom";
+import { Telegram } from "telegraf";
 const { getData } = require("./db/db");
 const foods = getData();
 
@@ -46,6 +47,17 @@ function App() {
     tele.MainButton.text = "Pay :)";
     tele.MainButton.show();
     console.log("well come to hello world")
+
+    Telegram.WebApp.MainButton.setText('Pay Order').show().onClick(function () {
+      //const data = JSON.stringify({hex: colorPicker.color.hexString, rgb: colorPicker.color.rgb});
+      const data={
+        name:"yared",
+        age:"233",
+        phone:"0988107722"
+      }
+      Telegram.WebApp.sendData(data);
+      Telegram.WebApp.close();
+    });
   };
 
   return (
